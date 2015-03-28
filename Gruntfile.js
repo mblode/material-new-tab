@@ -43,8 +43,8 @@ module.exports = function (grunt) {
         files: ['Gruntfile.js']
       },
       styles: {
-        files: ['<%= config.app %>/styles/{,*/}*.css'],
-        tasks: [],
+        files: ['<%= config.app %>/scss/{,*/}*.scss'],
+        tasks: ['sass', 'autoprefixer', 'cssmin'],
         options: {
           livereload: '<%= connect.options.livereload %>'
         }
@@ -201,9 +201,25 @@ module.exports = function (grunt) {
       }
     },
 
-    // By default, your `index.html`'s <!-- Usemin block --> will take care of
-    // minification. These next options are pre-configured if you do not wish
-    // to use the Usemin blocks.
+    sass: {                              // Task
+      dist: {                            // Target
+        options: {                       // Target options
+          style: 'expanded'
+        },
+        files: {                         // Dictionary of files
+          '<%= config.app %>/styles/main.css': '<%= config.app %>/scss/main.scss'
+        }
+      }
+    },
+
+    autoprefixer: {
+      options: {
+        browsers: ['last 2 versions', 'ie 8', 'ie 9']
+      },
+      src: '<%= config.app %>/styles/main.css',
+      dest: '<%= config.app %>/styles/main.css'
+    },
+
     cssmin: {
       dist: {
         files: {
@@ -314,8 +330,9 @@ module.exports = function (grunt) {
     'chromeManifest:dist',
     'useminPrepare',
     'concurrent:dist',
-    // No UI feature selected, cssmin task will be commented
-    // 'cssmin',
+    'sass',
+    'autoprefixer',
+    'cssmin',
     'concat',
     'uglify',
     'copy',

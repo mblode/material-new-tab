@@ -87,7 +87,8 @@ body {
   text-align: center;
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   opacity: 0;
-  transform: translate3d(0, 1em, 0);
+  -webkit-transform: translate3d(0, 1em, 0);
+          transform: translate3d(0, 1em, 0);
 }
 .metro-ul .metro .caption::before,
 .metro-ul .metro h2 {
@@ -147,5 +148,3 @@ body {
     margin: 2.5em 0em;
   }
 }
-
-/*# sourceMappingURL=main.css.map */
