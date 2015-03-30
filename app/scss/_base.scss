@@ -34,7 +34,7 @@ $black: #252525;
 }
 
 body {
-  background: #dfdfdf;
+  background: #efefef;
   font-family: $font-stack;
   margin-top: 1%;
 }
@@ -60,22 +60,21 @@ body {
 
   .metro {
     position: relative;
-    box-shadow: 0 0 40px rgba(0, 0, 0, 0.1) inset;
-    height: 16em;
+    height: 14em;
     overflow: hidden;
 
     i {
       position: absolute;
-      top: 64px;
+      top: 56px;
       left: 0;
-      margin: 0 0;
+      margin: 0;
       width: 100%;
       text-align: center;
-      opacity: 0.9;
+      opacity: 1;
       color: #fff;
       z-index: 1000;
-      font-size: 8em;
-      transition: opacity 0.5s;
+      font-size: 7em;
+      transition: all 0.5s;
     }
 
     &:hover {
@@ -102,7 +101,7 @@ body {
       position: absolute;
       bottom: 0;
       left: 0;
-      margin: 3.5em 0;
+      margin: 3em 0;
       width: 100%;
       text-align: center;
       text-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
@@ -119,7 +118,6 @@ body {
     &:hover .caption::before,
     &:hover h2 {
       opacity: 1;
-      -webkit-transform: translate3d(0,0,0);
       transform: translate3d(0,0,0);
     }
   }

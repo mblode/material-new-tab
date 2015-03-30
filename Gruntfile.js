@@ -216,8 +216,9 @@ module.exports = function (grunt) {
       options: {
         browsers: ['last 2 versions', 'ie 8', 'ie 9']
       },
-      src: '<%= config.app %>/styles/main.css',
-      dest: '<%= config.app %>/styles/main.css'
+      noDest: {
+        src: '<%= config.app %>/styles/main.css'
+      },
     },
 
     cssmin: {
