@@ -49,19 +49,21 @@ body {
   list-style: none;
   margin: 0;
   padding: 0;
+  box-shadow: none;
 
   a {
     display: block;
     text-decoration: none;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    box-shadow: none;
     background: #fff;
     margin: 0;
   }
 
   .metro {
     position: relative;
-    height: 14em;
+    height: 224px;
     overflow: hidden;
+    box-shadow: none;
 
     i {
       position: absolute;
@@ -73,7 +75,7 @@ body {
       opacity: 1;
       color: #fff;
       z-index: 1000;
-      font-size: 7em;
+      font-size: 112px;
       transition: all 0.5s;
     }
 
@@ -97,16 +99,16 @@ body {
     h2 {
       color: #fff;
       text-transform: uppercase;
-      font-size: 2em;
+      font-size: 32px;
       position: absolute;
       bottom: 0;
       left: 0;
-      margin: 3em 0;
+      margin: 88px 0;
       width: 100%;
       text-align: center;
-      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 3px 6px rgba(0, 0, 0, 0.1);
       opacity: 0;
-      transform: translate3d(0,1em,0);
+      transform: translate3d(0,16px,0);
     }
 
     .caption::before,
@@ -131,13 +133,13 @@ body {
     @media (max-width: $small) {
       @include rowMachine(2%, 2);
       .metro {
-        height: 12em;
+        height: 192px;
         i {
-          font-size: 6em;
+          font-size: 96px;
           top: 48px;
         }
         h2 {
-          margin: 2.5em 0em;
+          margin: 72px 0;
         }
       }
     }
