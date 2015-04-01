@@ -1,6 +1,6 @@
 {
   "name": "Material Design New Tab Page",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "manifest_version": 2,
   "description": "A new tab page for Chrome using Google's material design style.",
   "icons": {

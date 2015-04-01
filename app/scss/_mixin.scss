@@ -1,0 +1,13 @@
+@mixin rowMachine ($margin, $numPerRow) {
+  width: calc((100% - ($numPerRow - 1) * $margin) / $numPerRow);
+  margin-bottom: calc($margin / 2);
+  margin-top: calc($margin / 2);
+
+  &:nth-child(n) {
+    margin-right: $margin;
+  }
+
+  &:nth-child(#{$numPerRow}n) {
+    margin-right: 0;
+  }
+}
