@@ -204,7 +204,7 @@ module.exports = function (grunt) {
     sass: {                              // Task
       dist: {                            // Target
         options: {                       // Target options
-          style: 'expanded'
+          style: 'nested'
         },
         files: {                         // Dictionary of files
           '<%= config.app %>/styles/main.css': '<%= config.app %>/scss/main.scss'
@@ -213,23 +213,29 @@ module.exports = function (grunt) {
     },
 
     autoprefixer: {
-      options: {
-        browsers: ['last 2 versions', 'ie 8', 'ie 9']
-      },
       noDest: {
+        options: {
+          browsers: ['last 2 versions', 'ie 8', 'ie 9']
+        },
         src: '<%= config.app %>/styles/main.css'
       },
     },
 
     cssmin: {
-      dist: {
-        files: {
-          '<%= config.dist %>/styles/main.css': [
-            '<%= config.app %>/styles/{,*/}*.css'
-          ]
-        }
+      options: {
+        shorthandCompacting: false,
+        roundingPrecision: -1
+      },
+      target: {
+        files: [{
+          expand: true,
+          cwd: '<%= config.app %>/styles/',
+          src: ['*.css'],
+          dest: '<%= config.dist %>/styles/'
+        }]
       }
     },
+
     uglify: {
       dist: {
         files: {
